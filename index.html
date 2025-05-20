@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resume - Vickneshwaran Parthiban</title>
+    <title>portfolio - Vickneshwaran Parthiban</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,10 +20,254 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        /* Apps Section Styling */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+            padding: 0 1rem;
+        }
+
+        .app-card {
+            position: relative;
+            width: 100%;
+            max-width: 20rem;
+            min-height: 12rem;
+            background: #29292c;
+            border-radius: 1rem;
+            overflow: hidden;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: clamp(14px, 2vw, 16px);
+            --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
+            --color: #32a6ff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-card::before {
+            position: absolute;
+            content: "";
+            inset: 0.0625rem;
+            border-radius: 0.9375rem;
+            background: #18181b;
+            z-index: 2;
+        }
+
+        .app-card::after {
+            position: absolute;
+            content: "";
+            width: 0.25rem;
+            inset: 0.65rem auto 0.65rem 0.5rem;
+            border-radius: 0.125rem;
+            background: var(--gradient);
+            transition: transform 300ms ease;
+            z-index: 4;
+        }
+
+        .app-card:hover::after {
+            transform: translateX(0.15rem);
+        }
+
+        .app-title {
+            color: var(--color);
+            padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+            font-weight: 500;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            transition: transform 300ms ease;
+            z-index: 5;
+        }
+
+        .app-card:hover .app-title {
+            transform: translateX(0.15rem);
+        }
+
+        .app-description {
+            color: #99999d;
+            padding: 0 1.25rem 0.65rem;
+            line-height: 1.5;
+            transition: transform 300ms ease;
+            z-index: 5;
+        }
+
+        .app-card:hover .app-description {
+            transform: translateX(0.25rem);
+        }
+
+        .app-glow,
+        .app-border-glow {
+            position: absolute;
+            width: 20rem;
+            height: 20rem;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle closest-side at center, white, transparent);
+            opacity: 0;
+            transition: opacity 300ms ease;
+        }
+
+        .app-glow {
+            z-index: 3;
+        }
+
+        .app-border-glow {
+            z-index: 1;
+        }
+
+        .app-card:hover .app-glow {
+            opacity: 0.1;
+        }
+
+        .app-card:hover .app-border-glow {
+            opacity: 0.1;
+        }
+
+        .button {
+            --width: 100px;
+            --height: 35px;
+            --tooltip-height: 35px;
+            --tooltip-width: 90px;
+            --gap-between-tooltip-to-button: 18px;
+            --button-color: #1163ff;
+            --tooltip-color: #fff;
+            width: var(--width);
+            height: var(--height);
+            background: var(--button-color);
+            position: relative;
+            text-align: center;
+            border-radius: 0.45em;
+            font-family: "Arial";
+            transition: background 0.3s;
+            cursor: pointer;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .button::before {
+            position: absolute;
+            content: attr(data-tooltip);
+            width: var(--tooltip-width);
+            height: var(--tooltip-height);
+            background-color: var(--tooltip-color);
+            font-size: 0.9rem;
+            color: #111;
+            border-radius: .25em;
+            line-height: var(--tooltip-height);
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+            left: calc(50% - var(--tooltip-width) / 2);
+        }
+
+        .button::after {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: var(--tooltip-color);
+            left: calc(50% - 10px);
+            bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+        }
+
+        .button::after,
+        .button::before {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
+        }
+
+        .button:hover::before,
+        .button:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .button:hover::after {
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+        }
+
+        .button:hover::before {
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+        }
+
+        .button-wrapper,
+        .text,
+        .icon {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            color: #fff;
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            transition: top 0.5s;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            top: 100%;
+            transition: top 0.5s;
+        }
+
+        .icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .button:hover {
+            background: #6c18ff;
+        }
+
+        .button:hover .text {
+            top: -100%;
+        }
+
+        .button:hover .icon {
+            top: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .app-card {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .app-card {
+                font-size: 14px;
+            }
+
+            .app-title {
+                font-size: 1rem;
+            }
+
+            .app-description {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
     <!-- Preloader -->
     <div id="preloader">
         <div id="status">
@@ -40,6 +284,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Achievements</a></li>
+                <li><a href="#apps">My Apps</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -80,678 +325,626 @@
     </div>
     <!-- ./about -->
     
-<!-- education -->
-<div class="section" id="education">
-    <div class="container">
-        <div class="col-md-12">
-            <h4>03</h4>
-            <h1 class="size-50">My <br /> Education</h1>
-            <div class="h-50"></div>
-        </div>
-        <div class="education-grid">
-            <div class="notification" data-aos="fade-up">
-                <div class="notiglow"></div>
-                <div class="notiborderglow"></div>
-                <div class="notititle">Master’s in Education (Tamil Language)</div>
-                <div class="notibody">Sultan Idris Educational University<br>2022 – 2025</div>
+    <!-- education -->
+    <div class="section" id="education">
+        <div class="container">
+            <div class="col-md-12">
+                <h4>03</h4>
+                <h1 class="size-50">My <br /> Education</h1>
+                <div class="h-50"></div>
             </div>
-            <div class="notification" data-aos="fade-up" data-aos-delay=".2">
-                <div class="notiglow"></div>
-                <div class="notiborderglow"></div>
-                <div class="notititle">Bachelor of Education (Tamil Language)</div>
-                <div class="notibody">Sultan Idris Educational University<br>2017 – 2021<br>First Class Honours, CGPA: 3.88</div>
-            </div>
-            <div class="notification" data-aos="fade-up" data-aos-delay=".4">
-                <div class="notiglow"></div>
-                <div class="notiborderglow"></div>
-                <div class="notititle">Sijil Tinggi Persekolahan Malaysia (STPM)</div>
-                <div class="notibody">Ulu Tiram Secondary School<br>2015 – 2016</div>
-            </div>
-            <div class="notification" data-aos="fade-up" data-aos-delay=".6">
-                <div class="notiglow"></div>
-                <div class="notiborderglow"></div>
-                <div class="notititle">Sijil Pelajaran Malaysia (SPM)</div>
-                <div class="notibody">Puteri Wangsa Secondary School<br>2014</div>
+            <div class="education-grid">
+                <div class="notification" data-aos="fade-up">
+                    <div class="notiglow"></div>
+                    <div class="notiborderglow"></div>
+                    <div class="notititle">Master’s in Education (Tamil Language)</div>
+                    <div class="notibody">Sultan Idris Educational University<br>2022 – 2025</div>
+                </div>
+                <div class="notification" data-aos="fade-up" data-aos-delay=".2">
+                    <div class="notiglow"></div>
+                    <div class="notiborderglow"></div>
+                    <div class="notititle">Bachelor of Education (Tamil Language)</div>
+                    <div class="notibody">Sultan Idris Educational University<br>2017 – 2021<br>First Class Honours, CGPA: 3.88</div>
+                </div>
+                <div class="notification" data-aos="fade-up" data-aos-delay=".4">
+                    <div class="notiglow"></div>
+                    <div class="notiborderglow"></div>
+                    <div class="notititle">Sijil Tinggi Persekolahan Malaysia (STPM)</div>
+                    <div class="notibody">Ulu Tiram Secondary School<br>2015 – 2016</div>
+                </div>
+                <div class="notification" data-aos="fade-up" data-aos-delay=".6">
+                    <div class="notiglow"></div>
+                    <div class="notiborderglow"></div>
+                    <div class="notititle">Sijil Pelajaran Malaysia (SPM)</div>
+                    <div class="notibody">Puteri Wangsa Secondary School<br>2014</div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- ./education -->
+    <!-- ./education -->
 
-<style>
-.education-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-    padding: 0 1rem;
-}
+    <style>
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+            padding: 0 1rem;
+        }
 
-.notification {
-    display: flex;
-    flex-direction: column;
-    isolation: isolate;
-    position: relative;
-    width: 100%;
-    max-width: 20rem;
-    min-height: 8rem;
-    background: #29292c;
-    border-radius: 1rem;
-    overflow: hidden;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: clamp(14px, 2vw, 16px);
-    --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
-    --color: #32a6ff;
-}
+        .notification {
+            display: flex;
+            flex-direction: column;
+            isolation: isolate;
+            position: relative;
+            width: 100%;
+            max-width: 20rem;
+            min-height: 8rem;
+            background: #29292c;
+            border-radius: 1rem;
+            overflow: hidden;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: clamp(14px, 2vw, 16px);
+            --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
+            --color: #32a6ff;
+        }
 
-.notification:before {
-    position: absolute;
-    content: "";
-    inset: 0.0625rem;
-    border-radius: 0.9375rem;
-    background: #18181b;
-    z-index: 2;
-}
+        .notification:before {
+            position: absolute;
+            content: "";
+            inset: 0.0625rem;
+            border-radius: 0.9375rem;
+            background: #18181b;
+            z-index: 2;
+        }
 
-.notification:after {
-    position: absolute;
-    content: "";
-    width: 0.25rem;
-    inset: 0.65rem auto 0.65rem 0.5rem;
-    border-radius: 0.125rem;
-    background: var(--gradient);
-    transition: transform 300ms ease;
-    z-index: 4;
-}
+        .notification:after {
+            position: absolute;
+            content: "";
+            width: 0.25rem;
+            inset: 0.65rem auto 0.65rem 0.5rem;
+            border-radius: 0.125rem;
+            background: var(--gradient);
+            transition: transform 300ms ease;
+            z-index: 4;
+        }
 
-.notification:hover:after {
-    transform: translateX(0.15rem);
-}
+        .notification:hover:after {
+            transform: translateX(0.15rem);
+        }
 
-.notititle {
-    color: var(--color);
-    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
-    font-weight: 500;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    transition: transform 300ms ease;
-    z-index: 5;
-}
+        .notititle {
+            color: var(--color);
+            padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+            font-weight: 500;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            transition: transform 300ms ease;
+            z-index: 5;
+        }
 
-.notification:hover .notititle {
-    transform: translateX(0.15rem);
-}
+        .notification:hover .notititle {
+            transform: translateX(0.15rem);
+        }
 
-.notibody {
-    color: #99999d;
-    padding: 0 1.25rem 0.65rem;
-    line-height: 1.5;
-    transition: transform 300ms ease;
-    z-index: 5;
-}
+        .notibody {
+            color: #99999d;
+            padding: 0 1.25rem 0.65rem;
+            line-height: 1.5;
+            transition: transform 300ms ease;
+            z-index: 5;
+        }
 
-.notification:hover .notibody {
-    transform: translateX(0.25rem);
-}
+        .notification:hover .notibody {
+            transform: translateX(0.25rem);
+        }
 
-.notiglow,
-.notiborderglow {
-    position: absolute;
-    width: 20rem;
-    height: 20rem;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle closest-side at center, white, transparent);
-    opacity: 0;
-    transition: opacity 300ms ease;
-}
+        .notiglow,
+        .notiborderglow {
+            position: absolute;
+            width: 20rem;
+            height: 20rem;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle closest-side at center, white, transparent);
+            opacity: 0;
+            transition: opacity 300ms ease;
+        }
 
-.notiglow {
-    z-index: 3;
-}
+        .notiglow {
+            z-index: 3;
+        }
 
-.notiborderglow {
-    z-index: 1;
-}
+        .notiborderglow {
+            z-index: 1;
+        }
 
-.notification:hover .notiglow {
-    opacity: 0.1;
-}
+        .notification:hover .notiglow {
+            opacity: 0.1;
+        }
 
-.notification:hover .notiborderglow {
-    opacity: 0.1;
-}
+        .notification:hover .notiborderglow {
+            opacity: 0.1;
+        }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .education-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .education-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
 
-    .notification {
-        max-width: 90%;
-        margin: 0 auto;
-    }
-}
+            .notification {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        }
 
-@media (max-width: 480px) {
-    .notification {
-        font-size: 14px;
-    }
+        @media (max-width: 480px) {
+            .notification {
+                font-size: 14px;
+            }
 
-    .notititle {
-        font-size: 1rem;
-    }
+            .notititle {
+                font-size: 1rem;
+            }
 
-    .notibody {
-        font-size: 0.9rem;
-    }
-}
-</style>
+            .notibody {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
     
     <!-- experience -->
-<div class="section" id="experience">
-    <div class="container">
-        <div class="col-md-12">
-            <h4>02</h4>
-            <h1 class="size-50">My <br /> Experience</h1>
-            <div class="h-50"></div>
-        </div>
-        <div class="col-md-12">
-            <ul class="timeline">
-                <li class="timeline-event" data-aos="fade-up">
-                    <label class="timeline-event-icon"></label>
-                    <div class="timeline-event-copy">
-                        <p class="timeline-event-thumbnail">2023 - 2024</p>
-                        <h3>News Presenter (Tamil News)</h3>
-                        <h4>Radio Televisyen Malaysia (RTM2)</h4>
-                        <p><strong>National Tamil News Broadcast</strong><br>Presented national Tamil-language news broadcasts on RTM2 with clarity and professionalism, ensuring accuracy and engaging delivery for a diverse Malaysian audience.</p>
-                    </div>
-                </li>
-                <li class="timeline-event" data-aos="fade-up" data-aos-delay=".2">
-                    <label class="timeline-event-icon"></label>
-                    <div class="timeline-event-copy">
-                        <p class="timeline-event-thumbnail">2022</p>
-                        <h3>Assistant Project Director</h3>
-                        <h4>“Malaiyagathogai” Project, Tamil Literary Archive – P. Ramu Foundation</h4>
-                        <p><strong>Tamil Literary Archive</strong><br>Assisted in the planning, coordination, and execution of the literary project focused on preserving and promoting classical Tamil literature from the Malaya region.</p>
-                    </div>
-                </li>
-                <li class="timeline-event" data-aos="fade-up" data-aos-delay=".4">
-                    <label class="timeline-event-icon"></label>
-                    <div class="timeline-event-copy">
-                        <p class="timeline-event-thumbnail">2021 - Present</p>
-                        <h3>Online & Home Tutor</h3>
-                        <h4>Self-Employed</h4>
-                        <p><strong>Tamil Language and Literature</strong><br>Conducted personalized tutoring sessions for secondary school students in Tamil language and literature, focusing on academic improvement and exam readiness.</p>
-                    </div>
-                </li>
-                <li class="timeline-event" data-aos="fade-up" data-aos-delay=".6">
-                    <label class="timeline-event-icon"></label>
-                    <div class="timeline-event-copy">
-                        <p class="timeline-event-thumbnail">2021</p>
-                        <h3>Practicum Teacher</h3>
-                        <h4>SMK Ulu Tiram</h4>
-                        <p><strong>Teaching Practicum</strong><br>Completed teaching practicum, delivering Tamil language lessons, managing classroom dynamics, and developing instructional materials aligned with national curriculum standards.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!-- ./experience -->
-    
-<!-- projects -->
-<div class="section" id="projects">
-    <div class="container">
-        <div class="col-md-12">
-            <h4>03</h4>
-            <h1 class="size-50">My <br /> Achievements</h1>
-        </div>
-        <!-- main container -->
-        <div class="main-container portfolio-inner clearfix">
-            <!-- portfolio div -->
-            <div class="portfolio-div">
-                <div class="portfolio">
-                    <!-- portfolio_filter -->
-                    <div class="categories-grid wow fadeInLeft">
-                        <nav class="categories">
-                            <ul class="portfolio_filter">
-                                <li><a href="" class="active" data-filter="*">All</a></li>
-                                <li><a href="" data-filter=".academic">Academic</a></li>
-                                <li><a href="" data-filter=".leadershiproles">Leadership Roles</a></li>
-                                <li><a href="" data-filter=".eventdirection">Event Direction</a></li>
-                                <li><a href="" data-filter=".academiccontributions">Academic Contributions</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- portfolio_filter -->
-                    
-                    <!-- portfolio_container -->
-                    <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
-                        <!-- single work -->
-                        <div class="col-md-4 col-sm-6 academic">
-                            <a id="demo0" href="#" class="portfolio_item">
-                                <img src="img/achivements/acadmaic/a1.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span>Anugerah Khas Allahyarham Seeni Naina Mohamed</span>
-                                            <em>Academic / Award</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        <div class="col-md-4 col-sm-6 leadershiproles">
-                            <a id="demo0" href="#" class="portfolio_item">
-                                <img src="img/achivements/leadership/l1.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span>President, Tamil Language Society</span>
-                                            <em>Leadership Roles / UPSI</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        <div class="col-md-4 col-sm-6 eventdirection">
-                            <a id="demo0" href="#" class="portfolio_item">
-                                <img src="img/achivements/eventdirction/e3.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span>Director, Kalaicharam 2019</span>
-                                            <em>Event Direction / Cultural Night</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        <div class="col-md-4 col-sm-6 academic">
-                            <a id="demo0" href="#" class="portfolio_item">
-                                <img src="img/achivements/acadmaic/a2.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span>Dean’s List Award (8 Semesters)</span>
-                                            <em>Academic / Recognition</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        <div class="col-md-4 col-sm-6 leadershiproles">
-                            <a id="demo0" href="#" class="portfolio_item">
-                                <img src="img/achivements/leadership/l2.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span>Vice President, Tamil Language Society</span>
-                                            <em>Leadership Roles / UPSI</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        <div class="col-md-4 col-sm-6 leadershiproles">
-                            <a id="demo0" href="#" class="portfolio_item">
-                                <img src="img/achivements/leadership/l3.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span>Executive Committee, Unity and Integration</span>
-                                            <em>Leadership Roles / Student Council</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        <div class="col-md-4 col-sm-6 leadershiproles">
-                            <a id="demo0" href="#" class="portfolio_item">
-                                <img src="img/achivements/leadership/l4.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span>Executive Committee, Protocol Bureau</span>
-                                            <em>Leadership Roles / Bharathanatyam Club</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        <div class="col-md-4 col-sm-6 eventdirection">
-                            <a id="demo" href="#" class="portfolio_item">
-                                <img src="img/achivements/eventdirction/e2.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span>Director, SPECTRA 2019</span>
-                                            <em>Event Direction / Seminar & Dance</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                         <div class="col-md-4 col-sm-6 eventdirection">
-                            <a id="demo" href="#" class="portfolio_item">
-                                <img src="img/achivements/paper/paper.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span>தமிழ் மலர் நாளிதழில் வெளிவந்த எனது முதல் சிறுகதை</span>
-                                            <em></em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 col-sm-6 eventdirection">
-                            <a id="demo" href="#" class="portfolio_item">
-                                <img src="img/achivements/paper/paper1.png" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                    <div class="portfolio-border clearfix">
-                                        <div class="item_info">
-                                            <span></span>
-                                            <em></em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        
-                        <!-- end single work -->
-
-                        <!-- Academic Contributions -->
-                        <!-- single work -->
-
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                        
-                        <!-- end single work -->
-                        
-                        <!-- single work -->
-                       
-                        <!-- end single work -->
-                    </div>
-                    <!-- end portfolio_container -->
-
-                    <!-- Academic Contributions Details -->
-                    <div class="academic-contributions-details" data-aos="fade-up">
-    <h2>Academic Contributions</h2>
-    <div class="h-50"></div>
-    <h3>Conference Presentations (Published)</h3>
-    <ul>
-        <li><strong>Conference Paper:</strong> "திரையிசைப்பாடல்களின் வழிப் பண்புத்தொகைக் கற்றல் திறனை மேம்படுத்துதல்"<br>International Conference, Vellore Institute of Technology (VIT), India - 2019</li>
-    </ul>
-    <h3>Journal Articles (Published)</h3>
-    <ul>
-       <li><strong>Article:</strong> <a href="https://tamilperaivu.um.edu.my/" target="_blank">"வீடும் விழுதுகளும்" எனும் சிறுகதைத் தொகுப்பில் காணப்படும் சமூகவியல் கோட்பாடு ஓர் ஆய்வு</a><br>Published in Tamil Peraivu Journal, University of Malaya - 2020</li>
-        <li><strong>Article:</strong> <a href="#" target="_blank">‘எங்கள் தமிழர் இங்கே வந்தார்!’</a><br>Published in Malaiyagathogai, Tamil Literary Archive - P. Ramu Foundation - 2022</li>
-    </ul>
-    <h3>Research Presentations (Unpublished)</h3>
-    <ul>
-        <li>"எஸ். பி. எம். தேர்வில் மாணவர்களின் தமிழ்மொழியைத் தேர்வுப் பாடமாகப் பயில்வதில் இடைநிலைப்பள்ளி தமிழாசிரியர்களின் நிர்வகிப்புத் திறன்"<br>Educational Research Seminar - 2020</li>
-        <li>"நடமாட்டக் கட்டுப்பாட்டு ஆணையின் போது மென்பொருளின் வழியாக இலக்கணத் திறன் கற்றல் கற்பித்தல்"<br>Web-based Teaching Session (WebEx) - 2020</li>
-    </ul>
-    <h3>Other Scholarly Engagements</h3>
-    <ul>
-        <li>Presenter at multiple national and international academic conferences related to Tamil language and literature</li>
-        <li>Actively involved in academic discussions, literary reviews, and thematic seminars focused on Tamil education and linguistics</li>
-    </ul>
-    <h3>Cultural & Hosting Engagements</h3>
-    <ul>
-        <li>Emcee, Swarna Natchatira Cultural Night — UPSI, 2018</li>
-        <li>Host (Formal & Informal), multiple Indian cultural events and university programs</li>
-    </ul>
-
-    <h3>School Achievements</h3>
-    <ul>
-        <li><strong>SMK Ulu Tiram (STPM):</strong><br>Top Scorer in Tamil Language (STPM)</li>
-        <li><strong>SMK Puteri Wangsa (SPM):</strong><br>
-            <ul>
-                <li>Head Prefect, SMK Puteri Wangsa — 2014</li>
-                <li>President, Tamil Language Society — 2014</li>
-                <li>Vice President, Yellow House (Sports) — 201 W4</li>
-                <li>Active Committee Member, Kadet Polis</li>
-                <li>PRS Akademik, Ikon Jauhari — 2014</li>
-                <li>Participant, Tamil Short Story Writing Competition — 2014 (Organized by JKD Bahasa Tamil, Pasir Gudang District)</li>
-            </ul>
-        </li>
-    </ul>
-    <h3>Awards and Recognitions</h3>
-    <ul>
-        <li>Gold Award, Science Fiction Short Story Quiz Competition — Iyal Publication — 2020</li>
-        <li>Consolation Prize, 27th Literature Competitions, Tan Sri K.R. Soma Language and Literary Foundation, Classical Poem — 2019</li>
-        <li>Consolation Prize, Short Story Competition, Puchong Tamil Readers and Writers Association — 2022</li>
-    </ul>
-    
-    
-    <h3>Involvements & Achievements</h3>
-
-<h4>Academic Awards</h4>
-<ul>
-    <li>Anugerah Khas Allahyarham Seeni Naina Mohamed – 2022</li>
-    <li>Dean’s List Award – All 8 Semesters (Bachelor of Education)</li>
-</ul>
-
-<h4>Leadership Roles</h4>
-<ul>
-    <li>President, Tamil Language Society, UPSI — 2019/2020</li>
-    <li>Vice President, Tamil Language Society, UPSI — 2018/2019</li>
-    <li>Executive Committee – Unity and Integration, Student Council of Aminuddin Baki College — 2018/2019</li>
-    <li>Executive Committee – Protocol Bureau, Bharathanatyam Cultural Club</li>
-</ul>
-
-<h4>Event Directorship</h4>
-<ul>
-    <li>Director, Kalaicharam 2019 – Cultural Night, Tamil Language Society, UPSI</li>
-    <li>Director, SPECTRA 2019 – Seminar and Traditional Dance Competition, UPSI</li>
-    <li>Director, Talent Show 2017, organized by PKMI, UPSI</li>
-</ul>
-
-</div>
-<style>
-    /* Academic Contributions Details Styling */
-.academic-contributions-details {
-    margin-top: 2rem;
-    padding: 2rem;
-    background: #18181b;
-    border-radius: 0.9375rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    color: #99999d;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.academic-contributions-details:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.academic-contributions-details h2 {
-    color: #32a6ff;
-    font-size: clamp(1.8rem, 3vw, 2rem);
-    margin-bottom: 1rem;
-    border-left: 4px solid #32a6ff;
-    padding-left: 1rem;
-}
-
-.academic-contributions-details h3 {
-    color: #ffffff;
-    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-    margin: 1.5rem 0 0.5rem;
-    position: relative;
-}
-
-.academic-contributions-details h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.2rem;
-    width: 50px;
-    height: 2px;
-    background: #32a6ff;
-    transition: width 0.3s ease;
-}
-
-.academic-contributions-details h3:hover::after {
-    width: 100px;
-}
-
-.academic-contributions-details ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.academic-contributions-details li {
-    position: relative;
-    padding: 0.8rem 0 0.8rem 1.5rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-    transition: color 0.3s ease;
-}
-
-.academic-contributions-details li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #32a6ff;
-    font-size: 1.2rem;
-}
-
-.academic-contributions-details li strong {
-    color: #ffffff;
-    font-weight: 500;
-}
-
-.academic-contributions-details li:hover {
-    color: #ffffff;
-}
-
-.academic-contributions-details br {
-    margin-bottom: 0.3rem;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .academic-contributions-details {
-        padding: 1.5rem;
-        margin-top: 1.5rem;
-    }
-
-    .academic-contributions-details h2 {
-        font-size: 1.6rem;
-    }
-
-    .academic-contributions-details h3 {
-        font-size: 1.2rem;
-    }
-
-    .academic-contributions-details li {
-        font-size: 0.9rem;
-        padding: 0.6rem 0 0.6rem 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .academic-contributions-details {
-        padding: 1rem;
-    }
-
-    .academic-contributions-details h2 {
-        font-size: 1.4rem;
-        padding-left: 0.8rem;
-    }
-
-    .academic-contributions-details h3 {
-        font-size: 1.1rem;
-    }
-
-    .academic-contributions-details li {
-        font-size: 0.85rem;
-    }
-}
-</style>
-                </div>
-                <!-- portfolio -->
+    <div class="section" id="experience">
+        <div class="container">
+            <div class="col-md-12">
+                <h4>02</h4>
+                <h1 class="size-50">My <br /> Experience</h1>
+                <div class="h-50"></div>
             </div>
-            <!-- end portfolio div -->
+            <div class="col-md-12">
+                <ul class="timeline">
+                    <li class="timeline-event" data-aos="fade-up">
+                        <label class="timeline-event-icon"></label>
+                        <div class="timeline-event-copy">
+                            <p class="timeline-event-thumbnail">2023 - 2024</p>
+                            <h3>News Presenter (Tamil News)</h3>
+                            <h4>Radio Televisyen Malaysia (RTM2)</h4>
+                            <p><strong>National Tamil News Broadcast</strong><br>Presented national Tamil-language news broadcasts on RTM2 with clarity and professionalism, ensuring accuracy and engaging delivery for a diverse Malaysian audience.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".2">
+                        <label class="timeline-event-icon"></label>
+                        <div class="timeline-event-copy">
+                            <p class="timeline-event-thumbnail">2022</p>
+                            <h3>Assistant Project Director</h3>
+                            <h4>“Malaiyagathogai” Project, Tamil Literary Archive – P. Ramu Foundation</h4>
+                            <p><strong>Tamil Literary Archive</strong><br>Assisted in the planning, coordination, and execution of the literary project focused on preserving and promoting classical Tamil literature from the Malaya region.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".4">
+                        <label class="timeline-event-icon"></label>
+                        <div class="timeline-event-copy">
+                            <p class="timeline-event-thumbnail">2021 - Present</p>
+                            <h3>Online & Home Tutor</h3>
+                            <h4>Self-Employed</h4>
+                            <p><strong>Tamil Language and Literature</strong><br>Conducted personalized tutoring sessions for secondary school students in Tamil language and literature, focusing on academic improvement and exam readiness.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".6">
+                        <label class="timeline-event-icon"></label>
+                        <div class="timeline-event-copy">
+                            <p class="timeline-event-thumbnail">2021</p>
+                            <h3>Practicum Teacher</h3>
+                            <h4>SMK Ulu Tiram</h4>
+                            <p><strong>Teaching Practicum</strong><br>Completed teaching practicum, delivering Tamil language lessons, managing classroom dynamics, and developing instructional materials aligned with national curriculum standards.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- end main container -->
     </div>
-</div>
-<!-- ./projects -->
-
-
-<div class="grid-container">
-  <img src="img/slidshow/s1.png" alt="Slide 1">
-  <img src="img/slidshow/s2.png" alt="Slide 2">
-  <img src="img/slidshow/s3.png" alt="Slide 3">
-  <img src="img/slidshow/s4.png" alt="Slide 4">
-  <img src="img/slidshow/s5.png" alt="Slide 5">
-  <img src="img/slidshow/s6.png" alt="Slide 6">
-  <img src="img/slidshow/s7.png" alt="Slide 7">
-</div>
-
- <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 10px;
-      padding: 10px;
-    }
-
-    .grid-container img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-  </style>
+    <!-- ./experience -->
     
+    <!-- projects -->
+    <div class="section" id="projects">
+        <div class="container">
+            <div class="col-md-12">
+                <h4>03</h4>
+                <h1 class="size-50">My <br /> Achievements</h1>
+            </div>
+            <!-- main container -->
+            <div class="main-container portfolio-inner clearfix">
+                <!-- portfolio div -->
+                <div class="portfolio-div">
+                    <div class="portfolio">
+                        <!-- portfolio_filter -->
+                        <div class="categories-grid wow fadeInLeft">
+                            <nav class="categories">
+                                <ul class="portfolio_filter">
+                                    <li><a href="" class="active" data-filter="*">All</a></li>
+                                    <li><a href="" data-filter=".academic">Academic</a></li>
+                                    <li><a href="" data-filter=".leadershiproles">Leadership Roles</a></li>
+                                    <li><a href="" data-filter=".eventdirection">Event Direction</a></li>
+                                    <li><a href="" data-filter=".academiccontributions">Academic Contributions</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- portfolio_filter -->
+                        
+                        <!-- portfolio_container -->
+                        <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 academic">
+                                <a id="demo0" href="#" class="portfolio_item">
+                                    <img src="img/achivements/acadmaic/a1.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span>Anugerah Khas Allahyarham Seeni Naina Mohamed</span>
+                                                <em>Academic / Award</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                            
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 leadershiproles">
+                                <a id="demo0" href="#" class="portfolio_item">
+                                    <img src="img/achivements/leadership/l1.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span>President, Tamil Language Society</span>
+                                                <em>Leadership Roles / UPSI</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                            
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 eventdirection">
+                                <a id="demo0" href="#" class="portfolio_item">
+                                    <img src="img/achivements/eventdirction/e3.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span>Director, Kalaicharam 2019</span>
+                                                <em>Event Direction / Cultural Night</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                            
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 academic">
+                                <a id="demo0" href="#" class="portfolio_item">
+                                    <img src="img/achivements/acadmaic/a2.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span>Dean’s List Award (8 Semesters)</span>
+                                                <em>Academic / Recognition</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                            
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 leadershiproles">
+                                <a id="demo0" href="#" class="portfolio_item">
+                                    <img src="img/achivements/leadership/l2.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span>Vice President, Tamil Language Society</span>
+                                                <em>Leadership Roles / UPSI</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                            
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 leadershiproles">
+                                <a id="demo0" href="#" class="portfolio_item">
+                                    <img src="img/achivements/leadership/l3.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span>Executive Committee, Unity and Integration</span>
+                                                <em>Leadership Roles / Student Council</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                            
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 leadershiproles">
+                                <a id="demo0" href="#" class="portfolio_item">
+                                    <img src="img/achivements/leadership/l4.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span>Executive Committee, Protocol Bureau</span>
+                                                <em>Leadership Roles / Bharathanatyam Club</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                            
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 eventdirection">
+                                <a id="demo" href="#" class="portfolio_item">
+                                    <img src="img/achivements/eventdirction/e2.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span>Director, SPECTRA 2019</span>
+                                                <em>Event Direction / Seminar & Dance</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                            
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 eventdirection">
+                                <a id="demo" href="#" class="portfolio_item">
+                                    <img src="img/achivements/paper/paper.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span>தமிழ் மலர் நாளிதழில் வெளிவந்த எனது முதல் சிறுகதை</span>
+                                                <em></em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                            
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 eventdirection">
+                                <a id="demo" href="#" class="portfolio_item">
+                                    <img src="img/achivements/paper/paper1.png" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info">
+                                                <span></span>
+                                                <em></em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
+                        </div>
+                        <!-- end portfolio_container -->
 
+                        <!-- Academic Contributions Details -->
+                        <div class="academic-contributions-details" data-aos="fade-up">
+                            <h2>Academic Contributions</h2>
+                            <div class="h-50"></div>
+                            <h3>Conference Presentations (Published)</h3>
+                            <ul>
+                                <li><strong>Conference Paper:</strong> "திரையிசைப்பாடல்களின் வழிப் பண்புத்தொகைக் கற்றல் திறனை மேம்படுத்துதல்"<br>International Conference, Vellore Institute of Technology (VIT), India - 2019</li>
+                            </ul>
+                            <h3>Journal Articles (Published)</h3>
+                            <ul>
+                                <li><strong>Article:</strong> <a href="https://tamilperaivu.um.edu.my/" target="_blank">"வீடும் விழுதுகளும்" எனும் சிறுகதைத் தொகுப்பில் காணப்படும் சமூகவியல் கோட்பாடு ஓர் ஆய்வு</a><br>Published in Tamil Peraivu Journal, University of Malaya - 2020</li>
+                                <li><strong>Article:</strong> <a href="#" target="_blank">‘எங்கள் தமிழர் இங்கே வந்தார்!’</a><br>Published in Malaiyagathogai, Tamil Literary Archive - P. Ramu Foundation - 2022</li>
+                            </ul>
+                            <h3>Research Presentations (Unpublished)</h3>
+                            <ul>
+                                <li>"எஸ். பி. எம். தேர்வில் மாணவர்களின் தமிழ்மொழியைத் தேர்வுப் பாடமாகப் பயில்வதில் இடைநிலைப்பள்ளி தமிழாசிரியர்களின் நிர்வகிப்புத் திறன்"<br>Educational Research Seminar - 2020</li>
+                                <li>"நடமாட்டக் கட்டுப்பாட்டு ஆணையின் போது மென்பொருளின் வழியாக இலக்கணத் திறன் கற்றல் கற்பித்தல்"<br>Web-based Teaching Session (WebEx) - 2020</li>
+                            </ul>
+                            <h3>Other Scholarly Engagements</h3>
+                            <ul>
+                                <li>Presenter at multiple national and international academic conferences related to Tamil language and literature</li>
+                                <li>Actively involved in academic discussions, literary reviews, and thematic seminars focused on Tamil education and linguistics</li>
+                            </ul>
+                            <h3>Cultural & Hosting Engagements</h3>
+                            <ul>
+                                <li>Emcee, Swarna Natchatira Cultural Night — UPSI, 2018</li>
+                                <li>Host (Formal & Informal), multiple Indian cultural events and university programs</li>
+                            </ul>
+                            <h3>School Achievements</h3>
+                            <ul>
+                                <li><strong>SMK Ulu Tiram (STPM):</strong><br>Top Scorer in Tamil Language (STPM)</li>
+                                <li><strong>SMK Puteri Wangsa (SPM):</strong><br>
+                                    <ul>
+                                        <li>Head Prefect, SMK Puteri Wangsa — 2014</li>
+                                        <li>President, Tamil Language Society — 2014</li>
+                                        <li>Vice President, Yellow House (Sports) — 2014</li>
+                                        <li>Active Committee Member, Kadet Polis</li>
+                                        <li>PRS Akademik, Ikon Jauhari — 2014</li>
+                                        <li>Participant, Tamil Short Story Writing Competition — 2014 (Organized by JKD Bahasa Tamil, Pasir Gudang District)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h3>Awards and Recognitions</h3>
+                            <ul>
+                                <li>Gold Award, Science Fiction Short Story Quiz Competition — Iyal Publication — 2020</li>
+                                <li>Consolation Prize, 27th Literature Competitions, Tan Sri K.R. Soma Language and Literary Foundation, Classical Poem — 2019</li>
+                                <li>Consolation Prize, Short Story Competition, Puchong Tamil Readers and Writers Association — 2022</li>
+                            </ul>
+                            <h3>Involvements & Achievements</h3>
+                            <h4>Academic Awards</h4>
+                            <ul>
+                                <li>Anugerah Khas Allahyarham Seeni Naina Mohamed – 2022</li>
+                                <li>Dean’s List Award – All 8 Semesters (Bachelor of Education)</li>
+                            </ul>
+                            <h4>Leadership Roles</h4>
+                            <ul>
+                                <li>President, Tamil Language Society, UPSI — 2019/2020</li>
+                                <li>Vice President, Tamil Language Society, UPSI — 2018/2019</li>
+                                <li>Executive Committee – Unity and Integration, Student Council of Aminuddin Baki College — 2018/2019</li>
+                                <li>Executive Committee – Protocol Bureau, Bharathanatyam Cultural Club</li>
+                            </ul>
+                            <h4>Event Directorship</h4>
+                            <ul>
+                                <li>Director, Kalaicharam 2019 – Cultural Night, Tamil Language Society, UPSI</li>
+                                <li>Director, SPECTRA 2019 – Seminar and Traditional Dance Competition, UPSI</li>
+                                <li>Director, Talent Show 2017, organized by PKMI, UPSI</li>
+                            </ul>
+                        </div>
+                        <style>
+                            /* Academic Contributions Details Styling */
+                            .academic-contributions-details {
+                                margin-top: 2rem;
+                                padding: 2rem;
+                                background: #18181b;
+                                border-radius: 0.9375rem;
+                                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                                color: #99999d;
+                                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                            }
 
-    <div class="section" id="contact">
-    <p style="font-weight: bold; margin-bottom: 10px;">
-  📱 Download my  Kavidhai Application app 
+                            .academic-contributions-details:hover {
+                                transform: translateY(-5px);
+                                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+                            }
+
+                            .academic-contributions-details h2 {
+                                color: #32a6ff;
+                                font-size: clamp(1.8rem, 3vw, 2rem);
+                                margin-bottom: 1rem;
+                                border-left: 4px solid #32a6ff;
+                                padding-left: 1rem;
+                            }
+
+                            .academic-contributions-details h3 {
+                                color: #ffffff;
+                                font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+                                margin: 1.5rem 0 0.5rem;
+                                position: relative;
+                            }
+
+                            .academic-contributions-details h3::after {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                bottom: -0.2rem;
+                                width: 50px;
+                                height: 2px;
+                                background: #32a6ff;
+                                transition: width 0.3s ease;
+                            }
+
+                            .academic-contributions-details h3:hover::after {
+                                width: 100px;
+                            }
+
+                            .academic-contributions-details ul {
+                                list-style-type: none;
+                                padding-left: 0;
+                            }
+
+                            .academic-contributions-details li {
+                                position: relative;
+                                padding: 0.8rem 0 0.8rem 1.5rem;
+                                margin-bottom: 0.5rem;
+                                line-height: 1.6;
+                                transition: color 0.3s ease;
+                            }
+
+                            .academic-contributions-details li::before {
+                                content: '•';
+                                position: absolute;
+                                left: 0;
+                                color: #32a6ff;
+                                font-size: 1.2rem;
+                            }
+
+                            .academic-contributions-details li strong {
+                                color: #ffffff;
+                                font-weight: 500;
+                            }
+
+                            .academic-contributions-details li:hover {
+                                color: #ffffff;
+                            }
+
+                            .academic-contributions-details br {
+                                margin-bottom: 0.3rem;
+                            }
+
+                            /* Responsive Adjustments */
+                            @media (max-width: 768px) {
+                                .academic-contributions-details {
+                                    padding: 1.5rem;
+                                    margin-top: 1.5rem;
+                                }
+
+                                .academic-contributions-details h2 {
+                                    font-size: 1.6rem;
+                                }
+
+                                .academic-contributions-details h3 {
+                                    font-size: 1.2rem;
+                                }
+
+                                .academic-contributions-details li {
+                                    font-size: 0.9rem;
+                                    padding: 0.6rem 0 0.6rem 1.2rem;
+                                }
+                            }
+
+                            @media (max-width: 480px) {
+                                .academic-contributions-details {
+                                    padding: 1rem;
+                                }
+
+                                .academic-contributions-details h2 {
+                                    font-size: 1.4rem;
+                                    padding-left: 0.8rem;
+                                }
+
+                                .academic-contributions-details h3 {
+                                    font-size: 1.1rem;
+                                }
+
+                                .academic-contributions-details li {
+                                    font-size: 0.85rem;
+                                }
+                            }
+                        </style>
+                    </div>
+                    <!-- portfolio -->
+                </div>
+                <!-- end portfolio div -->
+            </div>
+            <!-- end main container -->
+        </div>
+    </div>
+    <!-- ./projects -->
+
+    <!-- apps -->
+    <div class="section" id="apps">
+        <div class="container">
+            <div class="col-md-12">
+                <h4>04</h4>
+                <h1 class="size-50">My <br /> Apps</h1>
+                <div class="h-50"></div>
+            </div>
+            <p style="font-weight: bold; margin-bottom: 10px;">
+  📱 Download my Kavidhai Application app 
 </p>
 
 <a href="apps/application-9b70e970-f9bd-43c2-b391-de720353cfd7.apk" download>
@@ -767,144 +960,57 @@
   </div>
 </a>
 
-<style>
-    .button {
-  --width: 100px;
-  --height: 35px;
-  --tooltip-height: 35px;
-  --tooltip-width: 90px;
-  --gap-between-tooltip-to-button: 18px;
-  --button-color: #1163ff;
-  --tooltip-color: #fff;
-  width: var(--width);
-  height: var(--height);
-  background: var(--button-color);
-  position: relative;
-  text-align: center;
-  border-radius: 0.45em;
-  font-family: "Arial";
-  transition: background 0.3s;
-  cursor: pointer;
-}
-
-.button::before {
-  position: absolute;
-  content: attr(data-tooltip);
-  width: var(--tooltip-width);
-  height: var(--tooltip-height);
-  background-color: var(--tooltip-color);
-  font-size: 0.9rem;
-  color: #111;
-  border-radius: .25em;
-  line-height: var(--tooltip-height);
-  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
-  left: calc(50% - var(--tooltip-width) / 2);
-}
-
-.button::after {
-  position: absolute;
-  content: '';
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-top-color: var(--tooltip-color);
-  left: calc(50% - 10px);
-  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
-}
-
-.button::after,
-.button::before {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s;
-}
-
-.button:hover::before,
-.button:hover::after {
-  opacity: 1;
-  visibility: visible;
-}
-
-.button:hover::after {
-  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
-}
-
-.button:hover::before {
-  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
-}
-
-.button-wrapper,
-.text,
-.icon {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  color: #fff;
-}
-
-.text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  transition: top 0.5s;
-}
-
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  top: 100%;
-  transition: top 0.5s;
-}
-
-.icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.button:hover {
-  background: #6c18ff;
-}
-
-.button:hover .text {
-  top: -100%;
-}
-
-.button:hover .icon {
-  top: 0;
-}
-
-</style>
-</div>
-
+        </div>
     </div>
-</div>
+    <!-- ./apps -->
+
+    <div class="grid-container">
+        <img src="img/slidshow/s1.png" alt="Slide 1">
+        <img src="img/slidshow/s2.png" alt="Slide 2">
+        <img src="img/slidshow/s3.png" alt="Slide 3">
+        <img src="img/slidshow/s4.png" alt="Slide 4">
+        <img src="img/slidshow/s5.png" alt="Slide 5">
+        <img src="img/slidshow/s6.png" alt="Slide 6">
+        <img src="img/slidshow/s7.png" alt="Slide 7">
+    </div>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+
     <!-- contact -->
-<div class="section" id="contact">
-    <div class="container">
-        <div class="col-md-12">
-            <h4>04</h4>
-            <h1 class="size-50">Contact Me</h1>
-            <div class="h-50"></div>
-        </div>
-        <div class="col-md-12" data-aos="fade-up">
-            <h3>Phone Number</h3>
-            <p>  <a href="tel:+60102353926">+6010-2353926</a></p>
-            <h3>Email</h3>
-            <p> <a href="mailto:vickneshwaranvicky17@gmail.com">vickneshwaranvicky17@gmail.com</a></p>
-            <h3>Address</h3>
-            <p>56, Jalan Badik 31, Taman Puteri Wangsa, 81800 Ulu Tiram, Johor Bahru, Johor</p>
+    <div class="section" id="contact">
+        <div class="container">
+            <div class="col-md-12">
+                <h4>05</h4>
+                <h1 class="size-50">Contact Me</h1>
+                <div class="h-50"></div>
+            </div>
+            <div class="col-md-12" data-aos="fade-up">
+                <h3>Phone Number</h3>
+                <p><a href="tel:+60102353926">+6010-2353926</a></p>
+                <h3>Email</h3>
+                <p><a href="mailto:vickneshwaranvicky17@gmail.com">vickneshwaranvicky17@gmail.com</a></p>
+                <h3>Address</h3>
+                <p>56, Jalan Badik 31, Taman Puteri Wangsa, 81800 Ulu Tiram, Johor Bahru, Johor</p>
+            </div>
         </div>
     </div>
-</div>
-<!-- ./contact -->
+    <!-- ./contact -->
 
-
-    <!--demo01-->
+    <!-- demo01 -->
     <div id="animatedModal" class="popup-modal">
         <div id="btn-close-modal" class="close-animatedModal close-popup-modal"> <i class="ion-close-round"></i> </div>
         <div class="clearfix"></div>
@@ -912,7 +1018,7 @@
             <div class="container">
                 <div class="portfolio-padding">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>Achiefhhbvement Details</h2>
+                        <h2>Achievement Details</h2>
                         <div class="h-50"></div>
                         <p>Explore my academic, leadership, cultural, and literary contributions, showcasing my commitment to Tamil language education and cultural preservation.</p>
                         <br />
@@ -928,9 +1034,6 @@
             </div>
         </div>
     </div>
-
-    
-
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
