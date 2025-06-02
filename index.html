@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" >
 <head>
-    <!-- basic page needs -->
+
+    <!--- basic page needs
+    ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vickneshwaran Parthiban</title>
@@ -11,19 +13,72 @@
         document.documentElement.classList.add('js');
     </script>
 
-    <!-- CSS -->
+    <!-- CSS
+    ================================================== -->
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .btn-download-app { 
+            position: relative; 
+            /* Add other styles as needed from btn btn--primary */
+        }
+        .btn-download-app .tooltiptext {
+            visibility: hidden;
+            width: 140px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; 
+            left: 50%;
+            margin-left: -70px; 
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .btn-download-app:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        .achievements-list {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 1.5rem;
+        }
+        .achievements-list li {
+            margin-bottom: 0.5rem;
+        }
+        .major-heading {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold; /* Or use existing heading styles */
+        }
+        #apps h3, #apps h4, #apps p,
+        #works h3, #works h4, #works p, #works ul {
+            color: var(--color-text); /* Ensure text is visible on light/dark backgrounds */
+        }
+        #apps {
+             background-color: var(--color-bg-secondary); /* Match theme */
+        }
+    </style>
 
-    <!-- favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/sing.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/sing.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/sing.png">
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+
 </head>
 
+
 <body id="top">
-    <!-- preloader -->
+
+    
+    <!-- preloader
+    ================================================== -->
     <div id="preloader">
         <div id="loader" class="dots-fade">
             <div></div>
@@ -32,69 +87,97 @@
         </div>
     </div>
 
-    <!-- page wrap -->
+
+    <!-- page wrap
+    ================================================== -->
     <div id="page" class="s-pagewrap">
-        <!-- site header -->
+
+
+        <!-- # site header 
+        ================================================== -->
         <header class="s-header">
             <div class="row s-header__inner">
+
                 <div class="s-header__block">
                     <div class="s-header__logo">
                         <a class="logo" href="index.html">
-                            <images src="images/sing.png" alt="Homepage">
+                            <img src="images/Signature.svg" alt="Homepage">
                         </a>
                     </div>
-                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-                </div>
 
-                <nav class="s-header__nav">
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div> <!-- end s-header__block -->
+
+                <nav class="s-header__nav">    
                     <ul class="s-header__menu-links">
                         <li class="current"><a class="smoothscroll" href="#intro">Intro</a></li>
                         <li><a class="smoothscroll" href="#about">About</a></li>
-                        <li><a class="smoothscroll" href="#education">Education</a></li>
-                        <li><a class="smoothscroll" href="#experience">Experience</a></li>
-                        <li><a class="smoothscroll" href="#achievements">Achievements</a></li>
-                        <li><a class="smoothscroll" href="#apps">Apps</a></li>
+                        <li><a class="smoothscroll" href="#works">Achievements</a></li>
+                        <li><a class="smoothscroll" href="#apps">My Apps</a></li>
                         <li><a class="smoothscroll" href="#footer">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+                    </ul> <!-- s-header__menu-links -->    
+                </nav> <!-- end s-header__nav -->
 
-        <!-- intro -->
+            </div> <!-- end s-header__inner -->
+        </header> <!-- end s-header -->
+
+
+        <!-- # intro
+        ================================================== -->
         <section id="intro" class="s-intro target-section">
+
             <div class="row s-intro__content width-sixteen-col">
                 <div class="column lg-12 s-intro__content-inner grid-block grid-16">
+                    
                     <div class="s-intro__content-text">
+
                         <div class="s-intro__content-pretitle text-pretitle">Hello</div>
                         <h1 class="s-intro__content-title">
-                            I'm Vickneshwaran Parthiban <br>
-                            a Tamil Language Specialist <br>
-                            based in Johor, Malaysia.
-                        </h1>
-                        <div class="s-intro__content-btns">
-                           
+                        I'm Vickneshwaran Parthiban <br>
+                        a Teacher & Tamil Language Specialist <br>
+                      
+                        </h1>                            
 
+                        <div class="s-intro__content-btns">
                             <a class="smoothscroll btn" href="#about">More About Me</a>
                             <a class="smoothscroll btn btn--stroke" href="#footer">Get In Touch</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </div> <!-- s-intro__content-btns -->   
+
+                    </div> <!-- s-intro__content-text -->                     
+                    
+                </div> <!-- s-intro__content-inner -->  
+            </div> <!-- s-intro__content -->
 
             <ul class="s-intro__social social-list">
-                <li><a href="#0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg><span class="u-screen-reader-text">Facebook</span></a></li>
-                <li><a href="#0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg><span class="u-screen-reader-text">Twitter</span></a></li>
-                <li><a href="#0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg><span class="u-screen-reader-text">Instagram</span></a></li>
-            </ul>
+                <li>
+                    <a href="#0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
+                        <span class="u-screen-reader-text">Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
+                        <span class="u-screen-reader-text">Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
+                        <span class="u-screen-reader-text">Instagram</span>
+                    </a>
+                </li>
+                <!-- Removed Dribbble and Pinterest for now as no links provided -->
+            </ul> <!-- end s-intro__social -->
 
-            <div class="s-intro__content-media">
-                <images src="images/profile.png" srcset="images/profile.png 1x, images/profile.png 2x" alt="Vickneshwaran Parthiban">
-            </div>
+            <div class="s-intro__content-media">                               
+                <img src="images/intro-bg.jpg" srcset="images/intro-bg.jpg 1x, images/intro-bg.jpg 2x" alt="">
+            </div> <!-- s-intro__content-media -->                
 
             <div class="s-intro__btn-download">
-                <a class="btn btn--stroke" href="#0">Get My CV</a>
-            </div>
-
+                <a class="btn btn--stroke" href="Kavidhai Application APK" download>Download Kavidhai App</a>
+            </div> <!-- end s-intro__btn-download -->
+            
             <div class="s-intro__scroll-down">
                 <a href="#about" class="smoothscroll">
                     <div class="scroll-icon">
@@ -102,322 +185,384 @@
                     </div>
                     <span class="scroll-text u-screen-reader-text">Scroll Down</span>
                 </a>
-            </div>
-        </section>
+            </div> <!-- s-intro__scroll-down -->
 
-        <!-- about -->
+        </section> <!-- end s-intro -->
+
+
+        <!-- # about
+        ================================================== -->
         <section id="about" class="s-about target-section">
+
             <div class="row s-about__content">
-                <div class="column xl-12">
+                <div class="column xl-12">    
+
                     <div class="section-header" data-num="01">
                         <h2 class="text-display-title">About Me.</h2>
-                    </div>
+                    </div> <!-- end section-header -->
 
                     <p class="attention-getter">
-                        I am a dedicated educator and Tamil language specialist with a deep passion for preserving and promoting Tamil literature and culture. Currently pursuing a Master’s in Education at Sultan Idris Educational University, I have a diverse professional background, including roles as a news presenter, literary project assistant, and tutor. My commitment extends to active involvement in academic and cultural societies, contributing to Tamil linguistics through conference presentations, journal publications, and literary reviews.
+                        <strong>Name:</strong> Vickneshwaran Parthiban<br>
+                        <strong>Profession:</strong> Teacher & Tamil Language Specialist<br>
+                        <strong>Current Role:</strong> Teacher at Puteri Wangsa Secondary School<br>
+                        <strong>Education Summary:</strong> Pursuing Master’s in Education (Tamil Language), Sultan Idris Educational University (2022–2025); Bachelor of Education (Tamil Language), Sultan Idris Educational University (2017–2021, First Class Honours, CGPA: 3.88); STPM, Ulu Tiram Secondary School (2015–2016); SPM, Puteri Wangsa Secondary School (2014).<br>
+                        <strong>Passion:</strong> Preserving and promoting Tamil literature and culture through education, literary contributions, and cultural engagements.
                     </p>
 
                     <p class="attention-getter">
-                        My leadership roles in various societies, such as President of the Tamil Language Society at UPSI, reflect my dedication to fostering Tamil language and culture. I am driven by a mission to inspire students and communities through education and cultural engagement, ensuring the rich heritage of Tamil literature thrives in modern contexts.
+                        A dedicated educator and Tamil language specialist with a strong commitment to Tamil literature and culture. Vickneshwaran has a multifaceted professional background, including roles as a news presenter, literary project assistant, and tutor. He is actively involved in academic and cultural societies, contributing to Tamil linguistics through conference presentations, journal publications, and literary reviews. Currently pursuing a Master’s in Education at Sultan Idris Educational University. Held significant positions in academic and cultural societies, showcasing leadership in fostering Tamil language and culture.
                     </p>
 
                     <div class="grid-list-items s-about__blocks">
+
                         <div class="grid-list-items__item s-about__block">
                             <h4 class="s-about__block-title">Experience</h4>
                             <ul class="s-about__list">
-                                <li>Radio Televisyen Malaysia (RTM2)<span>News Presenter (2023–2024)</span></li>
-                                <li>P. Ramu Foundation<span>Assistant Project Director, Malaiyagathogai (2022)</span></li>
-                                <li>Self-Employed<span>Online & Home Tutor (2021–Present)</span></li>
-                                <li>SMK Ulu Tiram<span>Practicum Teacher (2021)</span></li>
+                                <li>
+                                    Radio Televisyen Malaysia (RTM2)
+                                    <span>News Presenter (Tamil News), 2023–2024. Presented national Tamil-language news broadcasts with clarity and professionalism for a diverse Malaysian audience.</span>
+                                </li>
+                                <li>
+                                    Tamil Literary Archive – P. Ramu Foundation
+                                    <span>Assistant Project Director, “Malaiyagathogai” Project, 2022. Assisted in planning, coordination, and execution of a project focused on preserving and promoting classical Tamil literature from the Malaya region.</span>
+                                </li>
+                                <li>
+                                    Self-Employed
+                                    <span>Online & Home Tutor, 2021–Present. Conducted personalized tutoring sessions for secondary school students in Tamil language and literature, emphasizing academic improvement and exam readiness.</span>
+                                </li>
+                                <li>
+                                    SMK Ulu Tiram
+                                    <span>Practicum Teacher, 2021. Delivered Tamil language lessons, managed classroom dynamics, and developed instructional materials aligned with national curriculum standards.</span>
+                                </li>
                             </ul>
-                        </div>
+                        </div> <!-- end s-about__block -->
 
                         <div class="grid-list-items__item s-about__block">
-                            <h4 class="s-about__block-title">Awards</h4>
+                            <h4 class="s-about__block-title">Education</h4>
                             <ul class="s-about__list">
-                                <li><a href="#0">Anugerah Khas Allahyarham Seeni Naina Mohamed<span>2022</span></a></li>
-                                <li><a href="#0">Dean’s List Award<span>All 8 Semesters, Bachelor of Education</span></a></li>
-                                <li><a href="#0">Gold Award, Science Fiction Short Story Quiz<span>Iyal Publication, 2020</span></a></li>
-                                <li><a href="#0">Consolation Prize, 27th Literature Competitions<span>Tan Sri K.R. Soma Foundation, 2019</span></a></li>
-                                <li><a href="#0">Consolation Prize, Short Story Competition<span>Puchong Tamil Readers and Writers Association, 2022</span></a></li>
+                                <li>
+                                    Sultan Idris Educational University
+                                    <span>Master’s in Education (Tamil Language), 2022–2025</span>
+                                </li>
+                                <li>
+                                    Sultan Idris Educational University
+                                    <span>Bachelor of Education (Tamil Language), 2017–2021 (First Class Honours, CGPA: 3.88)</span>
+                                </li>
+                                <li>
+                                    Ulu Tiram Secondary School
+                                    <span>Sijil Tinggi Persekolahan Malaysia (STPM), 2015–2016</span>
+                                </li>
+                                <li>
+                                    Puteri Wangsa Secondary School
+                                    <span>Sijil Pelajaran Malaysia (SPM), 2014</span>
+                                </li>
                             </ul>
-                        </div>
+                        </div> <!-- end s-about__block -->
 
                         <div class="grid-list-items__item s-about__block">
-                            <h4 class="s-about__block-title">Skills</h4>
+                            <h4 class="s-about__block-title">Key Skills & Focus</h4>
                             <ul class="s-about__list">
-                                <li>Tamil Language Education</li>
-                                <li>Literary Analysis</li>
-                                <li>Public Speaking</li>
-                                <li>Event Hosting</li>
-                                <li>Academic Research</li>
-                                <li>Cultural Event Organization</li>
+                                <li>Tamil Language Pedagogy</li>
+                                <li>Curriculum Development</li>
+                                <li>Literary Analysis & Research</li>
+                                <li>Public Speaking & Presentation</li>
+                                <li>Event Management & Leadership</li>
+                                <li>Cultural Promotion</li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        </div> <!-- end s-about__block -->
 
-        <!-- education -->
-        <section id="education" class="s-education target-section">
+                    </div> <!-- end grid-list-items -->
+
+                </div> <!-- end column -->
+            </div> <!-- end s-about__content -->
+            
+        </section> <!-- end s-about -->
+
+
+        <!-- # works (Achievements)
+        ================================================== -->
+        <section id="works" class="s-works target-section">
+
             <div class="row">
                 <div class="column xl-12">
                     <div class="section-header" data-num="02">
-                        <h2 class="text-display-title">Education.</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row folio-entries">
-                <div class="column entry">
-                    <div class="entry__thumb">
-                        <images src="images/sing.png" alt="Sultan Idris Educational University">
-                    </div>
-                    <div class="entry__info">
-                        <h4 class="entry__title">Master’s in Education (Tamil Language)</h4>
-                        <div class="entry__cat">Sultan Idris Educational University, 2022–2025</div>
-                    </div>
-                </div>
-                <div class="column entry">
-                    <div class="entry__thumb">
-                        <images src="images/sing.png" alt="Sultan Idris Educational University">
-                    </div>
-                    <div class="entry__info">
-                        <h4 class="entry__title">Bachelor of Education (Tamil Language)</h4>
-                        <div class="entry__cat">Sultan Idris Educational University, 2017–2021, First Class Honours, CGPA: 3.88</div>
-                    </div>
-                </div>
-                <div class="column entry">
-                    <div class="entry__thumb">
-                        <images src="images/sing.png" alt="Ulu Tiram Secondary School">
-                    </div>
-                    <div class="entry__info">
-                        <h4 class="entry__title">Sijil Tinggi Persekolahan Malaysia (STPM)</h4>
-                        <div class="entry__cat">Ulu Tiram Secondary School, 2015–2016</div>
-                    </div>
-                </div>
-                <div class="column entry">
-                    <div class="entry__thumb">
-                        <images src="images/sing.png" alt="Puteri Wangsa Secondary School">
-                    </div>
-                    <div class="entry__info">
-                        <h4 class="entry__title">Sijil Pelajaran Malaysia (SPM)</h4>
-                        <div class="entry__cat">Puteri Wangsa Secondary School, 2014</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- experience -->
-        <section id="experience" class="s-experience target-section">
-            <div class="row">
-                <div class="column xl-12">
-                    <div class="section-header" data-num="03">
-                        <h2 class="text-display-title">Experience.</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row folio-entries">
-                <div class="column entry">
-                    <div class="entry__thumb">
-                        <images src="images/achivements/acadmaic/a1.png" alt="RTM2">
-                    </div>
-                    <div class="entry__info">
-                        <h4 class="entry__title">News Presenter</h4>
-                        <div class="entry__cat">Radio Televisyen Malaysia (RTM2), 2023–2024</div>
-                        <div class="glightbox-desc">Presented national Tamil-language news broadcasts with clarity and professionalism.</div>
-                    </div>
-                </div>
-                <div class="column entry">
-                    <div class="entry__thumb">
-                        <images src="images/achivements/acadmaic/a2.png" alt="P. Ramu Foundation">
-                    </div>
-                    <div class="entry__info">
-                        <h4 class="entry__title">Assistant Project Director</h4>
-                        <div class="entry__cat">Malaiyagathogai Project, P. Ramu Foundation, 2022</div>
-                        <div class="glightbox-desc">Assisted in preserving and promoting classical Tamil literature from the Malaya region.</div>
-                    </div>
-                </div>
-                <div class="column entry">
-                    <div class="entry__thumb">
-                        <images src="images/achivements/acadmaic/a1.png" alt="Tutor">
-                    </div>
-                    <div class="entry__info">
-                        <h4 class="entry__title">Online & Home Tutor</h4>
-                        <div class="entry__cat">Self-Employed, 2021–Present</div>
-                        <div class="glightbox-desc">Conducted personalized tutoring for secondary students in Tamil language and literature.</div>
-                    </div>
-                </div>
-                <div class="column entry">
-                    <div class="entry__thumb">
-                        <images src="images/achivements/acadmaic/a2.png" alt="SMK Ulu Tiram">
-                    </div>
-                    <div class="entry__info">
-                        <h4 class="entry__title">Practicum Teacher</h4>
-                        <div class="entry__cat">SMK Ulu Tiram, 2021</div>
-                        <div class="glightbox-desc">Delivered Tamil language lessons aligned with national curriculum standards.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- achievements -->
-        <section id="achievements" class="s-achievements target-section">
-            <div class="row">
-                <div class="column xl-12">
-                    <div class="section-header" data-num="04">
                         <h2 class="text-display-title">Achievements.</h2>
                     </div>
                 </div>
             </div>
 
-            <div class="row folio-entries">
-                <div class="column entry">
-                    <a href="images/portfolio/01.jpg" class="entry__link glightbox" data-glightbox="title: Anugerah Khas Allahyarham Seeni Naina Mohamed; description: .entry__desc-01">
-                        <div class="entry__thumb">
-                            <images src="images/achivements/acadmaic/a1.png" alt="Anugerah Khas">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Anugerah Khas Allahyarham Seeni Naina Mohamed</h4>
-                            <div class="entry__cat">Academic Award, 2022</div>
-                        </div>
-                    </a>
-                    <div class="glightbox-desc entry__desc-01">
-                        <p>Received for outstanding contributions to Tamil language education.</p>
-                    </div>
-                </div>
-                <div class="column entry">
-                    <a href="images/portfolio/01.jpg" class="entry__link glightbox" data-glightbox="title: Dean’s List Award; description: .entry__desc-02">
-                        <div class="entry__thumb">
-                            <images src="images/achivements/acadmaic/a2.png" alt="Dean’s List">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Dean’s List Award</h4>
-                            <div class="entry__cat">All 8 Semesters, Bachelor of Education</div>
-                        </div>
-                    </a>
-                    <div class="glightbox-desc entry__desc-02">
-                        <p>Recognized for academic excellence throughout my Bachelor’s degree.</p>
-                    </div>
-                </div>
-                <div class="column entry">
-                    <a href="images/portfolio/01.jpg" class="entry__link glightbox" data-glightbox="title: Published Journal Article; description: .entry__desc-03">
-                        <div class="entry__thumb">
-                            <images src="images/achivements/paper/paper.png" alt="Published Article">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Published Journal Article</h4>
-                            <div class="entry__cat">Tamil Peraivu Journal, 2020</div>
-                        </div>
-                    </a>
-                    <div class="glightbox-desc entry__desc-03">
-                        <p>Article titled “வீடும் விழுதுகளும்” published in Tamil Peraivu Journal, University of Malaya. <a href="https://tamilperaivu.um.edu.my/">Journal Link</a>.</p>
-                    </div>
-                </div>
-                <div class="column entry">
-                    <a href="images/portfolio/01.jpg" class="entry__link glightbox" data-glightbox="title: Conference Presentation; description: .entry__desc-04">
-                        <div class="entry__thumb">
-                            <images src="images/achivements/paper/paper1.png" alt="Conference Presentation">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Conference Presentation</h4>
-                            <div class="entry__cat">Vellore Institute of Technology, India, 2019</div>
-                        </div>
-                    </a>
-                    <div class="glightbox-desc entry__desc-04">
-                        <p>Presented on enhancing learning skills through Tamil film songs at an international conference.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <div class="row">
+                <div class="column xl-10 lg-12 offset-xl-1">
 
-        <!-- apps -->
-        <section id="apps" class="s-apps target-section">
+                    <h3 class="major-heading">Academic Awards</h3>
+                    <ul class="achievements-list">
+                        <li>Anugerah Khas Allahyarham Seeni Naina Mohamed (2022)</li>
+                        <li>Dean’s List Award (All 8 Semesters, Bachelor of Education)</li>
+                    </ul>
+
+                    <h3 class="major-heading">Leadership Roles</h3>
+                    <ul class="achievements-list">
+                        <li>President, Tamil Language Society, UPSI (2019/2020)</li>
+                        <li>Vice President, Tamil Language Society, UPSI (2018/2019)</li>
+                        <li>Executive Committee – Unity and Integration, Student Council of Aminuddin Baki College (2018/2019)</li>
+                        <li>Executive Committee – Protocol Bureau, Bharathanatyam Cultural Club</li>
+                    </ul>
+
+                    <h3 class="major-heading">Event Directorship</h3>
+                    <ul class="achievements-list">
+                        <li>Director, Kalaicharam 2019 – Cultural Night, Tamil Language Society, UPSI</li>
+                        <li>Director, SPECTRA 2019 – Seminar and Traditional Dance Competition, UPSI</li>
+                        <li>Director, Talent Show 2017, organized by PKMI, UPSI</li>
+                    </ul>
+
+                    <h3 class="major-heading">Academic Contributions</h3>
+                    <h4>Conference Presentations (Published):</h4>
+                    <p>"திரையிசைப்பாடல்களின் வழிப் பண்புத்தொகைக் கற்றல் திறனை மேம்படுத்துதல்" - International Conference, Vellore Institute of Technology (VIT), India (2019)</p>
+                    <h4>Journal Articles (Published):</h4>
+                    <p>"வீடும் விழுதுகளும்" எனும் சிறுகதைத் தொகுப்பில் காணப்படும் சமூகவியல் கோட்பாடு ஓர் ஆய்வு - Published in: Tamil Peraivu Journal, University of Malaya (2020) <a href="https://tamilperaivu.um.edu.my/" target="_blank" rel="noopener noreferrer">(Link: Tamil Peraivu Journal)</a></p>
+                    <p>‘எங்கள் தமிழர் இங்கே வந்தார்!’ - Published in: Malaiyagathogai, Tamil Literary Archive – P. Ramu Foundation (2022)</p>
+                    <h4>Research Presentations (Unpublished):</h4>
+                    <p>"எஸ். பி. எம். தேர்வில் மாணவர்களின் தமிழ்மொழியைத் தேர்வுப் பாடமாகப் பயில்வதில் இடைநிலைப்பள்ளி தமிழாசிரியர்களின் நிர்வகிப்புத் திறன்" - Educational Research Seminar (2020)</p>
+                    <p>"நடமாட்டக் கட்டுப்பாட்டு ஆணையின் போது மென்பொருளின் வழியாக இலக்கணத் திறன் கற்றல் கற்பித்தல்" - Web-based Teaching Session (WebEx) (2020)</p>
+                    <h4>Other Scholarly Engagements:</h4>
+                    <p>Presenter at multiple national and international academic conferences on Tamil language and literature. Actively involved in academic discussions, literary reviews, and thematic seminars focused on Tamil education and linguistics.</p>
+
+                    <h3 class="major-heading">Cultural & Hosting Engagements</h3>
+                    <ul class="achievements-list">
+                        <li>Emcee, Swarna Natchatira Cultural Night, UPSI (2018)</li>
+                        <li>Host for multiple Indian cultural events and university programs (formal and informal).</li>
+                    </ul>
+
+                    <h3 class="major-heading">School Achievements</h3>
+                    <h4>SMK Ulu Tiram (STPM):</h4>
+                    <ul class="achievements-list"><li>Top Scorer in Tamil Language (STPM)</li></ul>
+                    <h4>SMK Puteri Wangsa (SPM):</h4>
+                    <ul class="achievements-list">
+                        <li>Head Prefect (2014)</li>
+                        <li>President, Tamil Language Society (2014)</li>
+                        <li>Vice President, Yellow House (Sports) (2014)</li>
+                        <li>Active Committee Member, Kadet Polis</li>
+                        <li>PRS Akademik, Ikon Jauhari (2014)</li>
+                        <li>Participant, Tamil Short Story Writing Competition (2014, Organized by JKD Bahasa Tamil, Pasir Gudang District)</li>
+                    </ul>
+
+                    <h3 class="major-heading">Awards and Recognitions</h3>
+                    <ul class="achievements-list">
+                        <li>Gold Award, Science Fiction Short Story Quiz Competition – Iyal Publication (2020)</li>
+                        <li>Consolation Prize, 27th Literature Competitions, Tan Sri K.R. Soma Language and Literary Foundation, Classical Poem (2019)</li>
+                        <li>Consolation Prize, Short Story Competition, Puchong Tamil Readers and Writers Association (2022)</li>
+                    </ul>
+
+                </div> <!-- end column for content -->
+            </div> <!-- end row for content -->
+
+        </section> <!-- end s-works -->
+
+<!-- # works
+================================================== -->
+<section id="works" class="s-works target-section">
+
+    <div class="row">
+        <div class="column xl-12">
+            <div class="section-header" data-num="02">
+                <h2 class="text-display-title">Achievements.</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row folio-entries">
+
+        <!-- Academic Achievement 1 -->
+        <div class="column entry">
+            <a href="images/achivements/acadmaic/a1.png" class="entry__link glightbox" data-glightbox="title: Anugerah Khas Allahyarham Seeni Naina Mohamed; description: .entry__desc-01">
+                <div class="entry__thumb">
+                    <img src="images/achivements/acadmaic/a1.png" alt="Anugerah Khas Allahyarham Seeni Naina Mohamed">
+                </div>
+                <div class="entry__info" >
+                    <h4 class="entry__title" style="color: #fff ;">Anugerah Khas Allahyarham Seeni Naina Mohamed</h4>
+                    <div class="entry__cat"style="color: #fff ;">Academic</div>
+                </div>
+            </a>
+            <div class="glightbox-desc entry__desc-01">
+                <p>Special Award in memory of Allahyarham Seeni Naina Mohamed.</p>
+            </div>
+        </div>
+
+        <!-- Academic Achievement 2 -->
+        <div class="column entry">
+            <a href="images/achivements/acadmaic/a2.png" class="entry__link glightbox" data-glightbox="title: Dean’s List Award; description: .entry__desc-02">
+                <div class="entry__thumb">
+                    <img src="images/achivements/acadmaic/a2.png" alt="Dean’s List Award">
+                </div>
+                <div class="entry__info">
+                    <h4 class="entry__title" style="color: #fff ;">Dean’s List Award</h4>
+                    <div class="entry__cat" style="color: #fff ;">Academic - 8 Semesters</div>
+                </div>
+            </a>
+            <div class="glightbox-desc entry__desc-02">
+                <p>Achieved Dean’s List Award for all 8 semesters at UPSI.</p>
+            </div>
+        </div>
+
+        <!-- Leadership Role 1 -->
+        <div class="column entry">
+            <a href="images/achivements/leadership/l1.png" class="entry__link glightbox" data-glightbox="title: President, Tamil Language Society; description: .entry__desc-03">
+                <div class="entry__thumb">
+                    <img src="images/achivements/leadership/l1.png" alt="President, Tamil Language Society">
+                </div>
+                <div class="entry__info">
+                    <h4 class="entry__title" style="color: #fff ;">President</h4>
+                    <div class="entry__cat" style="color: #fff ;">Tamil Language Society, UPSI</div>
+                </div>
+            </a>
+            <div class="glightbox-desc entry__desc-03">
+                <p>Served as President of Tamil Language Society at UPSI, promoting cultural activities.</p>
+            </div>
+        </div>
+
+        <!-- Leadership Role 2 -->
+        <div class="column entry">
+            <a href="images/achivements/leadership/l2.png" class="entry__link glightbox" data-glightbox="title: Vice President, Tamil Language Society; description: .entry__desc-04">
+                <div class="entry__thumb">
+                    <img src="images/achivements/leadership/l2.png" alt="Vice President, Tamil Language Society">
+                </div>
+                <div class="entry__info">
+                    <h4 class="entry__title" style="color: #fff ;">Vice President</h4>
+                    <div class="entry__cat" style="color: #fff ;">Tamil Language Society, UPSI</div>
+                </div>
+            </a>
+            <div class="glightbox-desc entry__desc-04">
+                <p>Assisted in leading and managing the Tamil Language Society as Vice President.</p>
+            </div>
+        </div>
+
+        <!-- Leadership Role 3 -->
+        <div class="column entry">
+            <a href="images/achivements/leadership/l3.png" class="entry__link glightbox" data-glightbox="title: Executive Committee, Student Council; description: .entry__desc-05">
+                <div class="entry__thumb">
+                    <img src="images/achivements/leadership/l3.png" alt="Student Council Executive Committee">
+                </div>
+                <div class="entry__info">
+                    <h4 class="entry__title" style="color: #fff ;">Executive Committee</h4>
+                    <div class="entry__cat" style="color: #fff ;">Unity and Integration, Student Council</div>
+                </div>
+            </a>
+            <div class="glightbox-desc entry__desc-05">
+                <p>Contributed to student unity and campus integration programs as an executive member.</p>
+            </div>
+        </div>
+
+        <!-- Leadership Role 4 -->
+        <div class="column entry">
+            <a href="images/achivements/leadership/l4.png" class="entry__link glightbox" data-glightbox="title: Executive Committee, Bharathanatyam Club; description: .entry__desc-06">
+                <div class="entry__thumb">
+                    <img src="images/achivements/leadership/l4.png" alt="Protocol Bureau, Bharathanatyam Club">
+                </div>
+                <div class="entry__info">
+                    <h4 class="entry__title" style="color: #fff ;">Executive Committee</h4>
+                    <div class="entry__cat" style="color: #fff ;">Protocol Bureau, Bharathanatyam Club</div>
+                </div>
+            </a>
+            <div class="glightbox-desc entry__desc-06">
+                <p>Managed event protocols and cultural coordination in the Bharathanatyam Club.</p>
+            </div>
+        </div>
+
+        <!-- Event Direction 1 -->
+        <div class="column entry">
+            <a href="images/achivements/eventdirction/e3.png" class="entry__link glightbox" data-glightbox="title: Director, Kalaicharam 2019; description: .entry__desc-07">
+                <div class="entry__thumb">
+                    <img src="images/achivements/eventdirction/e3.png" alt="Director, Kalaicharam 2019">
+                </div>
+                <div class="entry__info">
+                    <h4 class="entry__title"style="color: #fff ;">Director</h4>
+                    <div class="entry__cat"style="color: #fff ;">Kalaicharam 2019</div>
+                </div>
+            </a>
+            <div class="glightbox-desc entry__desc-07">
+                <p>Led and directed the major cultural event Kalaicharam 2019.</p>
+            </div>
+        </div>
+
+        <!-- Event Direction 2 -->
+        <div class="column entry">
+            <a href="images/achivements/eventdirction/e2.png" class="entry__link glightbox" data-glightbox="title: Director, Cultural Events; description: .entry__desc-08">
+                <div class="entry__thumb">
+                    <img src="images/achivements/eventdirction/e2.png" alt="Director, Cultural Events">
+                </div>
+                <div class="entry__info">
+                    <h4 class="entry__title"style="color: #fff ;">Director</h4>
+                    <div class="entry__cat"style="color: #fff ;">Cultural Event Management</div>
+                </div>
+            </a>
+            <div class="glightbox-desc entry__desc-08">
+                <p>Directed and coordinated various cultural events at university level.</p>
+            </div>
+        </div>
+
+    </div> <!-- folio entries -->
+
+</section> <!-- end s-works -->
+
+
+        <!-- # My Apps
+        ================================================== -->
+        <section id="apps" class="s-apps target-section" style="padding-top: 10rem; padding-bottom: 10rem;">
             <div class="row">
                 <div class="column xl-12">
-                    <div class="section-header" data-num="05">
-                        <h2 class="text-display-title">My Apps.</h2>
+                    <div class="section-header light-on-dark" data-num="03"> <!-- Assuming dark background for this section or adjust -->
+                        <h2 class="text-display-title" style="color: black;">My Apps.</h2>
                     </div>
                 </div>
             </div>
-
-            <div class="row folio-entries">
-                <div class="column entry">
-                    <a href="apps/application-9b70e970-f9bd-43c2-b391-de720353cfd7.apk" class="entry__link" data-tooltip="File Size: 96 MB">
-                        <div class="entry__thumb">
-                            <images src="images/slidshow/s1.png" alt="Kavidhai Application">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Kavidhai Application</h4>
-                            <div class="entry__cat">Tamil Poetry Application</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="row s-testimonials">
-                <div class="column xl-12">
-                    <h3 class="s-testimonials__header">App Slideshow</h3>
-                    <div class="swiper-container s-testimonials__slider">
-                        <div class="swiper-wrapper">
-                            <div class="s-testimonials__slide swiper-slide">
-                                <images src="images/slidshow/s1.png" alt="Kavidhai App Slide 1">
-                            </div>
-                            <div class="s-testimonials__slide swiper-slide">
-                                <images src="images/slidshow/s2.png" alt="Kavidhai App Slide 2">
-                            </div>
-                            <div class="s-testimonials__slide swiper-slide">
-                                <images src="images/slidshow/s3.png" alt="Kavidhai App Slide 3">
-                            </div>
-                            <div class="s-testimonials__slide swiper-slide">
-                                <images src="images/slidshow/s4.png" alt="Kavidhai App Slide 4">
-                            </div>
-                            <div class="s-testimonials__slide swiper-slide">
-                                <images src="images/slidshow/s5.png" alt="Kavidhai App Slide 5">
-                            </div>
-                            <div class="s-testimonials__slide swiper-slide">
-                                <images src="images/slidshow/s6.png" alt="Kavidhai App Slide 6">
-                            </div>
-                            <div class="s-testimonials__slide swiper-slide">
-                                <images src="images/slidshow/s7.png" alt="Kavidhai App Slide 7">
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
+            <div class="row">
+                <div class="column xl-8 lg-10 md-12 offset-xl-2 offset-lg-1" style="text-align: center;">
+                    <h4>Kavidhai Application</h4>
+                    <p>A downloadable application focused on Tamil poetry or literature.</p>
+                    <p>
+                        <a href="Kavidhai Application APK" class="btn btn--primary btn-download-app" download>
+                            Download Kavidhai App 
+                            <!-- Add download icon here if available in template's icon set -->
+                            <span class="tooltiptext">FileSize:96 MB</span>
+                        </a>
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- footer -->
+
+        <!-- # footer 
+        ================================================== -->
         <footer id="footer" class="s-footer target-section">
+
             <div class="row">
                 <div class="column lg-12">
-                    <div class="section-header light-on-dark" data-num="06">
+                    <div class="section-header light-on-dark" data-num="04">
                         <h2 class="text-display-title">Get In Touch.</h2>
-                    </div>
+                    </div> <!-- end section-header -->
                 </div>
             </div>
 
             <div class="row s-footer__content">
-                <div class="column xl-6 md-12 s-footer__block s-footer__about">
+
+                <div class="column xl-6 md-12 s-footer__block s-footer__about">                    
                     <p class="attention-getter">
-                        Feel free to reach out for collaborations, inquiries about Tamil language education, or cultural projects. I am passionate about connecting with individuals and organizations to promote Tamil literature and heritage.
-                    </p>
-                </div>
+                    Passionate about preserving and promoting Tamil literature and culture. Feel free to reach out for collaborations, discussions, or opportunities.
+                    </p>               
+                </div> <!-- end section-footer__about -->
 
                 <div class="column xl-6 md-12 s-footer__block s-footer__site-links">
                     <div class="row">
-                        <div class="column xl-4 lg-5 md-6 tab-12">
+                        <div class="column xl-5 lg-6 md-6 tab-12">
                             <h5>Follow Me</h5>
                             <ul class="link-list">
                                 <li><a href="#0">Facebook</a></li>
                                 <li><a href="#0">Twitter</a></li>
                                 <li><a href="#0">Instagram</a></li>
+                                <!-- Add other social links if available -->
                             </ul>
                         </div>
-                        <div class="column xl-6 md-6 tab-12">
+                        <div class="column xl-7 lg-6 md-6 tab-12">
                             <h5>Contact Me</h5>
                             <ul class="link-list">
                                 <li><a href="mailto:vickneshwaranvicky17@gmail.com">vickneshwaranvicky17@gmail.com</a></li>
@@ -426,46 +571,62 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> <!-- end section-footer__site-links -->
+
+            </div> <!-- end s-footer__content -->
 
             <div class="row s-footer__buttons">
-                <div class="column xl-6 tab-12">
-                    <a href="mailto:vickneshwaranvicky17@gmail.com" class="btn btn--primary btn--large u-fullwidth">Message Me</a>
+                <div class="column xl-12">
+                    <a href="mailto:vickneshwaranvicky17@gmail.com" class="btn btn--primary u-fullwidth">Send Me A Message</a>
                 </div>
-                <div class="column xl-6 tab-12">
-                    <a href="#0" class="btn btn--stroke btn--large u-fullwidth">Get My CV</a>
-                </div>
-            </div>
+            </div> <!-- end s-footer__buttons -->
 
             <div class="row s-footer__bottom">
                 <div class="column xl-6 lg-12">
                     <ul class="s-footer__social social-list">
-                        <li><a href="#0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg><span class="u-screen-reader-text">Facebook</span></a></li>
-                        <li><a href="#0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg><span class="u-screen-reader-text">Twitter</span></a></li>
-                        <li><a href="#0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg><span class="u-screen-reader-text">Instagram</span></a></li>
-                    </ul>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
+                                <span class="u-screen-reader-text">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
+                                <span class="u-screen-reader-text">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+                    </ul> <!-- end s-footer__social -->
                 </div>
-
                 <div class="column xl-6 lg-12">
                     <p class="ss-copyright">
-                        <span>© Copyright Vickneshwaran Parthiban 2025</span>
-                        <span>Design by <a href="https://styleshout.com/">StyleShout</a> Distribution by <a href="https://themewagon.com">ThemeWagon</a></span>
+                        <span>© Copyright Hudson 2024</span> 
+                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                        <span>Site of Vickneshwaran Parthiban</span>
                     </p>
                 </div>
-            </div>
+            </div> <!-- end s-footer__bottom -->
 
             <div class="ss-go-top">
                 <a class="smoothscroll" title="Back to Top" href="#top">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0,0,0,1);"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"></path></svg>
                 </a>
-                <span>Back To Top</span>
-            </div>
-        </footer>
-    </div>
+            </div> <!-- end ss-go-top -->
 
-    <!-- JavaScript -->
+        </footer> <!-- end s-footer -->
+
+    </div> <!-- end page-wrap -->
+
+    <!-- Java Script
+    ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>
